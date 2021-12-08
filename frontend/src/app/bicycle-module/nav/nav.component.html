@@ -1,0 +1,19 @@
+<nav>
+  <a  *ngIf="!validateSession()" class="btn btn-outline-primary me-2" routerLink="auth-page" routerLinkActive="active">LogIn/SignUp</a>
+
+  <a class="btn me-2 btn-outline-primary" routerLink="list" routerLinkActive="active"> Browse</a>
+
+  <a *ngIf="validateSession()" routerLink="main/new" routerLinkActive="active" class="btn me-2 btn-outline-primary">
+    New
+  </a>
+<!--   
+  <button  (click)="logout()" class="btn me-3 btn-outline-primary">
+    Logout
+  </button> -->
+
+  <button *ngIf="validateSession()" (click)="logout()" class="btn me-3 btn-outline-primary">
+    Logout
+  </button>
+
+</nav>
+<!-- <router-outlet></router-outlet> -->

@@ -1,0 +1,40 @@
+
+<div class="m-2 p-2 border">
+
+  <form class="p-3 m-3" (ngSubmit)="createNewUser()" >
+  <!-- <form (ngSubmit)="validate()"> -->
+    <h3>Create a New User</h3>
+    <div>
+      {{newUser | json}}
+
+    </div>
+    <div class="row mb-3">
+      <label for="firstName">First Name:</label>
+      <input type="text"  [(ngModel)]="newUser.firstName" name="firstName" id="firstName" />
+      <div *ngIf="errorMessages.fNameError.length > 0">{{errorMessages.fNameError}}</div>
+    </div>
+    <div class="row mb-3">
+      <label for="lastName">Last Name:</label>
+      <input type="text" [(ngModel)]="newUser.lastName" name="lastName" id="lastName" />
+      <div *ngIf="errorMessages.lNameError.length > 0">{{errorMessages.lNameError}}</div>
+    </div>
+    <div class="row mb-3">
+      <label for="email">Email:</label>
+      <input type="text" [(ngModel)]="newUser.email" name="email" id="email" />
+      <div *ngIf="errorMessages.emailError.length > 0">{{errorMessages.emailError}}</div>
+    </div>
+    <div class="row mb-3">
+      <label for="password">Password:</label>
+      <input type="password"  [(ngModel)]="newUser.password" name="password" id="password" />
+      <div *ngIf="errorMessages.passError.length > 0">{{errorMessages.passError}}</div>
+    </div>
+    <div class="row mb-3">
+      <label for="passwordConfirmation">Password Confirmation:</label>
+      <input type="password" [(ngModel)]="newUser.passwordConfirmation" name="passwordConfirmation" id="passwordConfirmation" />
+      <div *ngIf="errorMessages.passConfError.length > 0">{{errorMessages.passConfError}}</div>
+    </div>
+    <div class=" d-flex justify-content-center mb-3">
+      <button class="btn btn-outline-success" type="submit">Create New User</button>
+    </div>
+  </form>
+</div>

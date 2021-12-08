@@ -1,0 +1,20 @@
+<div class="container-lg">
+  MAIN PAGE
+  <!-- <nav>
+    
+    <a class="btn me-2 btn-outline-primary" routerLink="list" routerLinkActive="active"> Browse</a>
+
+    <a routerLink="new" routerLinkActive="active" class="btn me-2 btn-outline-primary">
+      New
+    </a>
+    
+    <button 
+      *ngIf="loggedInUser._id.length > 0"
+      (click)="logout()" class="btn me-3 btn-outline-primary">
+      Logout
+    </button>
+    
+  </nav> -->
+
+  <router-outlet></router-outlet>
+</div>

@@ -1,0 +1,30 @@
+<div>
+  <app-nav></app-nav>
+  <div *ngIf="errorMsgs.Error.length > 0">{{errorMsgs.Error}}</div>
+  <form (ngSubmit)="editBicycle()">
+    {{bicycle | json}}
+    <div class="mb-3">
+      <label for="title" class="form-label">Title:</label>
+      <input type="text" [(ngModel)]="bicycle.title" class="form-control" id="title" name="title" >
+      <div *ngIf="errorMsgs.titleError.length > 0">{{errorMsgs.titleError}}</div>
+    </div>
+    <div class="mb-3">
+      <label for="price" class="form-label">Price:</label>
+      <input type="number" class="form-control" id="price" [(ngModel)]="bicycle.price" name="price" >
+      <div *ngIf="errorMsgs.priceError.length > 0">{{errorMsgs.priceError}}</div>
+    </div>
+    <div class="mb-3">
+      <label for="location" class="form-label">Location:</label>
+      <input type="text" class="form-control" id="location" [(ngModel)]="bicycle.location" name="location" >
+      <div *ngIf="errorMsgs.locationError.length > 0">{{errorMsgs.locationError}}</div>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlTextarea1" class="form-label">Description:</label>
+      <textarea class="form-control" name="description" [(ngModel)] ="bicycle.description" id="exampleFormControlTextarea1" rows="3"></textarea>
+      <div *ngIf="errorMsgs.descriptionError.length > 0">{{errorMsgs.descriptionError}}</div>
+    </div>
+    <div class="mb-3 row">
+      <button type="submit" class="btn btn-outline-primary">Update</button>
+    </div>
+  </form>
+</div>

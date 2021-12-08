@@ -1,0 +1,12 @@
+<div class="container-lg" >
+  <h1>Bicylce Marketplace</h1>
+  <!-- <nav  *ngIf="loggedInUser">
+    <a class="btn btn-outline-primary me-2" routerLink="auth-page"
+      routerLinkActive="active">LogIn/SignUp</a>
+    <a class="btn me-2 btn-outline-primary" routerLink="browse" routerLinkActive="active"> Browse</a>
+    
+  </nav> -->
+  <!-- <router-outlet></router-outlet> -->
+</div>
+
+<app-main-page (loggedInUserEvent)="validateSession()"></app-main-page>

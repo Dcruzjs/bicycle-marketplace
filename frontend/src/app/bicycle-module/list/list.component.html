@@ -1,0 +1,16 @@
+<p>bicycle-list works!</p>
+<app-nav></app-nav>
+
+<div *ngIf="bicycles.length > 0; else NothingToShow">
+
+  <div *ngFor="let bicycle of bicycles">
+    
+    <app-bicycle (updateListEvent)="loadAll()" [bicycle]="bicycle"></app-bicycle>
+    
+  </div>
+</div>
+
+
+<ng-template #NothingToShow>
+  There is nothing to show.
+</ng-template>

@@ -1,0 +1,33 @@
+<div class="container-lg mb-3 d-flex">
+  <div class="img w-25 d-flex justify-content-center border">Image</div>
+  <div class="desc-container border d-flex w-75">
+    <div class="desc-text w-75 p-3 border">
+      <div class="title"><h2> {{bicycle.title}} </h2></div>
+      <!-- <div *ngIf="bicycle.id">- {{bicycle._id}</div> -->
+      <div class="description">
+        {{bicycle.description}} 
+      </div>
+    </div>
+    <div class="desc-text2 w-25 d-flex flex-column align-items-center gap-3 p-3 border">
+      <div class="price">{{bicycle.price}}</div>
+      <div class="location">{{bicycle.location}}</div>
+      <div>
+        <div *ngIf="loggedInUser._id.length > 0 && loggedInUser._id === bicycle.ownerId " class="button mb-2 d-flex gap-2">
+
+          <a routerLink="main/bicycle/{{bicycle._id}}"  class="btn btn-outline-warning">Edit</a>
+
+          <button id="{{bicycle._id}}" (click)="delete($event)" class="btn btn-outline-danger">Delete</button>
+
+        </div>
+
+        <button (click)="validateSession()" class="btn w-100 btn-outline-primary">Contact</button>
+        
+        <p>Owner: {{bicycle.ownerName}}</p>
+        <p>Email: {{bicycle.ownerEmail}}</p>
+
+      </div>
+    </div>
+    
+  </div>
+  
+</div>
